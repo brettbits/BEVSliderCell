@@ -20,7 +20,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
         self.items = @[@"Blank", @"Slide left", @"Slide right", @"Both"];
     }
     return self;
@@ -36,7 +35,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -75,6 +73,9 @@
         [button addTarget:self action:@selector(buttonBehindCellPressed:) forControlEvents:UIControlEventTouchUpInside];
         [cell.backgroundView addSubview:button];
         cell.backgroundView.backgroundColor = [UIColor blackColor];
+        
+        // Only allow the cell to slide out enough to fully reveal the button
+        cell.minimumVisibleWidth = cell.frame.size.width - bFrame.size.width;
     } else if (2 == row) {
         // Slide right
         cell.allowPanningRight = YES;
