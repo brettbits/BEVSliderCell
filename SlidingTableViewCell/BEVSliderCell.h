@@ -1,13 +1,11 @@
-BEVSliderCell
-=============
+//
+//  BEVSliderCell.h
+//  SevenPlay
+//
+//  Created by Brett Neely <sourcecode@bitsevolving.com> on 9/18/13.
+//  Copyright (c) 2014 Bits Evolving. Distributed under the MIT license -- see LICENSE file for details.
+//
 
-This Xcode project provides a sliding UITableViewCell and demonstrates how to use it.
-
-BEVSliderCell is a UITableViewCell subclass that uses the pan gesture to allow dragging the cell's content view left or right. Actions can be attached to a BEVSliderCell instance so the action is invoked when a user drags the cell to the maximum left or right position. Controls such as buttons can be added to the cell's backgroundView, and will be revealed when the cell slides out.
-
-BEVSliderCell.h:
-
-```
 #import <UIKit/UIKit.h>
 
 typedef enum {
@@ -33,4 +31,6 @@ extern NSString * const BEVSliderCellRestoredOriginNotification;
 - (void)addTarget:(id)target action:(SEL)action atMinimumWidthForDirection:(BEVDirection)direction;
 
 @end
-```
+
+// TODO: handle velocity (keep moving if moving fast)
+// TODO: gradually fade background to bgColorDuringPan depending on pan amount (distance from 0)
