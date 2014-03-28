@@ -56,6 +56,7 @@ NSString * const BEVEditingKey = @"editing";
     [self setBackgroundView:bgView];
 }
 
+// BUG: Subclassing BEVSliderCell can prevent this method from executing, leaving the cell without the gesture recognizer
 - (void)awakeFromNib
 {
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];

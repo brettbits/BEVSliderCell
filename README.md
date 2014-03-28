@@ -34,3 +34,5 @@ extern NSString * const BEVSliderCellRestoredOriginNotification;
 
 @end
 ```
+
+Tested with: OS X 10.9.1; Xcode 5.0.2; iOS SDK 7.0.4
